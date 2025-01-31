@@ -1,66 +1,175 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
   
-  header {
-    background: #4CAF50;
-    color: white;
-    padding: 1rem 0;
+}
+
+/* Header */
+header {
+  background: #282b28;
+  color: white;
+  padding: 1rem 0;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+/* Navigation */
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Underline effect on hover */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #FFD700;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #FFD700;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Home Section */
+#home {
+  background: url('gre.png') center/cover no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  animation: zoomIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay for better readability */
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+  z-index: 1;
+}
+
+/* Ensure content stays on top */
+#home * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Services */
+#services ul {
+  list-style: none;
+  padding: 0;
+}
+
+#services li {
+  background: #4CAF50;
+  color: white;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#services li:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  animation: slideUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  .navbar {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
+  to {
+      opacity: 1;
   }
-  
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
   }
-  
-  .navbar a:hover {
-    color: #FFD700;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  section {
-    padding: 2rem;
-    text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
   }
-  
-  #home {
-    background: #f4f4f4;
-    padding: 4rem 2rem;
+  to {
+      transform: translateY(0);
+      opacity: 1;
   }
-  
-  #services ul {
-    list-style: none;
-    padding: 0;
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
   }
-  
-  #services li {
-    background: #4CAF50;
-    color: white;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border-radius: 5px;
+  to {
+      transform: translateY(0);
+      opacity: 1;
   }
-  
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+}
+
+@keyframes zoomIn {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
   }
-  
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
