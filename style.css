@@ -4,14 +4,14 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  color: #333;
+  color: #2c3c44;
   animation: fadeIn 1s ease-in-out;
   
 }
 
 /* Header */
 header {
-  background: #282b28;
+  background: #2c3c44;
   color: white;
   padding: 1rem 0;
   animation: slideDown 0.8s ease-in-out;
@@ -109,7 +109,7 @@ section {
 
 /* Service Items (Box Style) */
 #services li {
-  background: #4CAF50;
+  background: #4CAF50; /* Default background color */
   color: white;
   margin: 0.5rem;
   padding: 2rem;
@@ -119,21 +119,52 @@ section {
   font-size: 1.1rem;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for box effect */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-image 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Hover Effect (Box Lift) */
+/* Add overlay to text for better readability */
+#services li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Hover Effect (Box Lift + Background Change) */
 #services li:hover {
   transform: translateY(-5px); /* Slight upward movement */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
+/* Hover - Change background to image (individual images for each service) */
+#service1:hover {
+  background-image: url('1.avif'); /* Replace with your image */
+}
+
+#service2:hover {
+  background-image: url('exp.webp'); /* Replace with your image */
+}
+
+#service3:hover {
+  background-image: url('online.jpg'); /* Replace with your image */
+}
+
+#service4:hover {
+  background-image: url('lux.webp'); /* Replace with your image */
+}
+
 /* Footer */
 footer {
-  background: #333;
+  background: #2c3c44;
   color: white;
   text-align: center;
   padding: 1rem 0;
