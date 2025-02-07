@@ -1,6 +1,7 @@
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  background: #ffffff; /* Replace with your desired color */
+   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -12,35 +13,43 @@ body {
 /* Header */
 header {
   background: #2c3c44;
-  color: white;
   padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.8s ease-in-out;
 }
 
-/* Navigation */
+/* Navigation Bar */
 .navbar {
-  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin: 0;
+  align-items: center;
+  list-style: none;
   padding: 0;
+  margin: 0;
+  gap: 2rem;
 }
 
+/* Navigation Links */
 .navbar a {
   text-decoration: none;
   color: white;
+  font-size: 1.1em;
   font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
   position: relative;
+  transition: color 0.3s ease-in-out;
 }
 
-/* Underline effect on hover */
+/* Underline Hover Effect */
 .navbar a::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: #4CAF50;
   bottom: -5px;
   left: 0;
@@ -48,12 +57,21 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Hover Effects */
 .navbar a:hover {
   color: #4CAF50;
 }
 
 .navbar a:hover::after {
   transform: scaleX(1);
+}
+
+/* Responsive Navigation (Mobile View) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 /* Sections */
@@ -63,19 +81,216 @@ section {
   animation: fadeInUp 1s ease-in-out;
 }
 
-/* Home Section */
-#home {
-  background: url('vec.jpg') center/cover no-repeat;
-  color: white;
+/* About Section */
+#about {
+  background: #f9f9f9;
   padding: 4rem 2rem;
-  animation: zoomIn 1s ease-in-out;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* About Container */
+.about-container {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* About Content */
+.about-content {
+  flex: 1;
   text-align: left;
 }
 
+.about-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3c44;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Underline Effect */
+.about-content h2::after {
+  content: "";
+  width: 185px;
+  height: 4px;
+  background: #4CAF50;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* About Text */
+.about-content p {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Learn More Button */
+.btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #388E3C;
+}
+
+/* About Image */
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-image {
+    text-align: center;
+  }
+}
+
+/* Home Section */
+#home {
+  height: 100vh; /* Full screen */
+  background: url('vec.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  animation: zoomIn 1s ease-in-out;
+}
+
+/* Dark overlay for better readability */
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Ensure content stays on top */
 #home * {
-  margin-left: 2rem; /* Adjust as needed */
+  position: relative;
+  z-index: 2;
+}
+
+/* Welcome Heading */
+#home h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Subheading */
+#home p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  line-height: 1.6;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* CTA Button */
+#home .cta-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: #4CAF50;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInUp 1.4s ease-in-out;
+}
+
+#home .cta-btn:hover {
+  background: #3d8b40;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #home {
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  #home h1 {
+    font-size: 2.5rem;
+  }
+
+  #home p {
+    font-size: 1.2rem;
+  }
+
+  #home .cta-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }
 
 
@@ -160,6 +375,154 @@ section {
 
 #service4:hover {
   background-image: url('lux.webp'); /* Replace with your image */
+}
+
+/* Contact Section */
+#contact {
+  background: #2c3c44;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Contact Heading */
+#contact h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+/* Underline Effect */
+.about-content h2::after {
+  content: "";
+  width: 185px;
+  height: 4px;
+  background: #4CAF50;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+
+#contact p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #cfd8dc;
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #1e2a30;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Input Fields */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #cfd8dc;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #2c3c44;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #66ff99;
+  box-shadow: 0px 0px 8px rgba(102, 255, 153, 0.8);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: #66ff99;
+  transform: scale(1.05);
+}
+
+/* Social Links */
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  /* Adjust form width for smaller screens */
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  /* Adjust font sizes for smaller screens */
+  #contact h2 {
+    font-size: 1.8em;
+  }
+
+  #contact p {
+    font-size: 1em;
+  }
+
+  .input-group input, .input-group textarea {
+    width: 100%;
+  }
+  
+  .submit-btn {
+    font-size: 1.1em;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* Footer */

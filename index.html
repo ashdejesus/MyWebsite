@@ -12,12 +12,7 @@
 <body>
  
 
-  <section id="home">
-    <h1>Welcome to My Website</h1>
-    <p>Your one-stop solution for great services.</p>
-  </section>
-
-   <header>
+  <header>
     <nav>
       <ul class="navbar">
         <li><a href="#home">Home</a></li>
@@ -27,10 +22,29 @@
       </ul>
     </nav>
   </header>
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We are a company dedicated to providing the best solutions for our customers.</p>
+  <section id="home">
+    <h1>Welcome to My Website</h1>
+    <p>Your one-stop solution for great services.</p>
+    <a href="#services" class="cta-btn">Explore Our Services</a>
   </section>
+
+
+  <section id="about">
+    <div class="about-container">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+          We are a company dedicated to providing the best solutions for our customers.
+          Our mission is to deliver high-quality services that meet your needs.
+        </p>
+        <a href="#services" class="btn">Learn More</a>
+      </div>
+      <div class="about-image">
+        <img src="exp.webp" alt="About Us">
+      </div>
+    </div>
+  </section>
+  
 
   <section id="services">
     <h2>Our Services</h2>
@@ -69,12 +83,33 @@
     </ul>
   </section>
   
-  
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@mywebsite.com</p>
-    <p>Phone: +123 456 7890</p>
+    <p>We'd love to hear from you! Send us a message and we'll get back to you soon.</p>
+    
+    <form action="submit_form.php" method="POST">
+      <div class="input-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+      </div>
+      <div class="input-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="input-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <ul class="social-links">
+      <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+      <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+    </ul>
   </section>
+  
 
   <footer>
     <p>&copy; 2025 My Website. All Rights Reserved.</p>
