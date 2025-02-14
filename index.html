@@ -6,12 +6,10 @@
   <title>Simple Website</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
- 
-
   <header>
     <nav>
       <ul class="navbar">
@@ -22,94 +20,87 @@
       </ul>
     </nav>
   </header>
-  <section id="home">
-    <h1>Welcome to My Website</h1>
-    <p>Your one-stop solution for great services.</p>
-    <a href="#services" class="cta-btn">Explore Our Services</a>
-  </section>
 
+  <main>
+    <section id="home">
+      <h1>Welcome to My Website</h1>
+      <p>Your one-stop solution for great services.</p>
+      <a href="#services" class="cta-btn">Explore Our Services</a>
+    </section>
 
-  <section id="about">
-    <div class="about-container">
-      <div class="about-content">
-        <h2>About Us</h2>
-        <p>
-          We are a company dedicated to providing the best solutions for our customers.
-          Our mission is to deliver high-quality services that meet your needs.
-        </p>
-        <a href="#services" class="btn">Learn More</a>
-      </div>
-      <div class="about-image">
-        <img src="exp.webp" alt="About Us">
-      </div>
-    </div>
-  </section>
-  
+    <section id="about">
+      <section class="about-container">
+        <section class="about-content">
+          <h2>About Us</h2>
+          <p>
+            We are a company dedicated to providing the best solutions for our customers.
+            Our mission is to deliver high-quality services that meet your needs.
+          </p>
+          <a href="#services" class="btn">Learn More</a>
+        </section>
+        <figure class="about-image">
+          <img src="exp.webp" alt="About Us">
+        </figure>
+      </section>
+    </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <!-- Web Development Service Box -->
-      <li id="service1">
-        <div class="service-content">
-          <h3>Vacation Homes</h3>
-          <p>Explore unique vacation homes tailored to your needs.</p>
-        </div>
-      </li>
-      
-      <!-- App Development Service Box -->
-      <li id="service2">
-        <div class="service-content">
-          <h3>Experiences</h3>
-          <p>Discover extraordinary experiences hosted by locals.</p>
-        </div>
-      </li>
-      
-      <!-- Digital Marketing Service Box -->
-      <li id="service3">
-        <div class="service-content">
-          <h3>Online Experiences</h3>
-          <p>Join immersive online experiences from the comfort of your home.</p>
-        </div>
-      </li>
-      
-      <!-- New Service: Luxury -->
-      <li id="service4">
-        <div class="service-content">
-          <h3>Luxury</h3>
-          <p>Indulge in luxurious stays and experiences.</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-  
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>We'd love to hear from you! Send us a message and we'll get back to you soon.</p>
-    
-    <form action="submit_form.php" method="POST">
-      <div class="input-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your name">
-      </div>
-      <div class="input-group">
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email">
-      </div>
-      <div class="input-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li id="service1">
+          <article class="service-content">
+            <h3>Vacation Homes</h3>
+            <p>Explore unique vacation homes tailored to your needs.</p>
+          </article>
+        </li>
+        <li id="service2">
+          <article class="service-content">
+            <h3>Experiences</h3>
+            <p>Discover extraordinary experiences hosted by locals.</p>
+          </article>
+        </li>
+        <li id="service3">
+          <article class="service-content">
+            <h3>Online Experiences</h3>
+            <p>Join immersive online experiences from the comfort of your home.</p>
+          </article>
+        </li>
+        <li id="service4">
+          <article class="service-content">
+            <h3>Luxury</h3>
+            <p>Indulge in luxurious stays and experiences.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
 
-    <ul class="social-links">
-      <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-      <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-    </ul>
-  </section>
-  
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Send us a message and we'll get back to you soon.</p>
+      <form action="submit_form.php" method="POST">
+        <section class="input-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
+        </section>
+        <section class="input-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </section>
+        <section class="input-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+        </section>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      <nav>
+        <ul class="social-links">
+          <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 My Website. All Rights Reserved.</p>
